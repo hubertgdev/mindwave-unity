@@ -22,13 +22,13 @@ The demo scene only contains the `MindwaveManager` prefab (from `Plugins/Mindwav
 
 All is ready ? Let's play the demo scene. You should see the following screen :
 
-![Mindwave disconnected GUI](./Documentation/GettingStarted_01.png)
+![Mindwave disconnected GUI](./DocumentationAssets/GettingStarted_01.png)
 
-Click on "Connect" button. It initializes the connection to the Mindwave device. Note that it can fail if the headset is not put correctly (the front metallic part should touch the very center of the user's forehead).
+Click on "Connect to Mindwave" button. It initializes the connection to the Mindwave device. Note that it can fail if the headset is not put correctly (the front metallic part should touch the very center of the user's forehead).
 
 Now, you should see something like this :
 
-![Mindwave connected GUI](./Documentation/GettingStarted_02.png)
+![Mindwave connected GUI](./DocumentationAssets/GettingStarted_02.png)
 
 ... Congratulations, this brain is working!
 
