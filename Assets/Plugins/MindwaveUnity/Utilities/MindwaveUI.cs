@@ -138,16 +138,19 @@ public class MindwaveUI : MonoBehaviour
 
 				if (m_Controller != null && m_Controller.IsConnected)
 				{
-					GUILayout.Box("Ratios");
+					GUILayout.Box("Data");
+					DrawData("Nb. data collected", m_Calibrator.DataCount);
+					DrawSpace();
 
-					DrawData("Delta", m_Calibrator.DeltaRatio);
-					DrawData("Theta", m_Calibrator.ThetaRatio);
-					DrawData("Low Alpha", m_Calibrator.LowAlphaRatio);
-					DrawData("High Alpha", m_Calibrator.HighAlphaRatio);
-					DrawData("Low Beta", m_Calibrator.LowBetaRatio);
-					DrawData("High Beta", m_Calibrator.HighBetaRatio);
-					DrawData("Low Gamma", m_Calibrator.LowGammaRatio);
-					DrawData("High Gamma", m_Calibrator.HighGammaRatio);
+					GUILayout.Box("Ratios");
+					DrawData("Delta", m_Calibrator.EvaluateRatio(Brainwave.Delta, m_MindwaveData.eegPower.delta));
+					DrawData("Theta", m_Calibrator.EvaluateRatio(Brainwave.Theta, m_MindwaveData.eegPower.theta));
+					DrawData("Low Alpha", m_Calibrator.EvaluateRatio(Brainwave.LowAlpha, m_MindwaveData.eegPower.lowAlpha));
+					DrawData("High Alpha", m_Calibrator.EvaluateRatio(Brainwave.HighAlpha, m_MindwaveData.eegPower.highAlpha));
+					DrawData("Low Beta", m_Calibrator.EvaluateRatio(Brainwave.LowBeta, m_MindwaveData.eegPower.lowBeta));
+					DrawData("High Beta", m_Calibrator.EvaluateRatio(Brainwave.HighBeta, m_MindwaveData.eegPower.highBeta));
+					DrawData("Low Gamma", m_Calibrator.EvaluateRatio(Brainwave.LowGamma, m_MindwaveData.eegPower.lowGamma));
+					DrawData("High Gamma", m_Calibrator.EvaluateRatio(Brainwave.HighGamma, m_MindwaveData.eegPower.highGamma));
 				}
 
 				else

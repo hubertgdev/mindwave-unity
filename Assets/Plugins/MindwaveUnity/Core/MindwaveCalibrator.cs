@@ -11,8 +11,7 @@
 /// 
 ///		This component gets the data sent by a MindwaveController, and can calculate a ratio of all the
 ///	stored values for a given brainwave type (delta, theta, ...).
-///		Note that the calculation is quite heavy, and you should take care to call CalculateRatio() (or
-///	the accessors -Ratio) only once per frame.
+///		Note that the calculation is quite heavy, and you should take care to call CalculateRatio() only once per frame.
 ///
 ///</summary>
 [AddComponentMenu("Scripts/NeuroSky/Mindwave Calibrator")]
@@ -81,11 +80,13 @@ public class MindwaveCalibrator : MonoBehaviour
 		}
 
 		/// <summary>
-		/// Calculate the ratio of the total values for the given brainwave type.
+		/// Evaluate the ratio of the given value, according to the average collected value of the
+		/// given brainwave.
 		/// Note that a coefficient is applied to each value depending on the "poorSignalLevel" value.
 		/// If that value is more or equal to 200 (which means there's no signal), the value will be 0.
 		/// </summary>
-		public float CalculateRatio(Brainwave _BrainwaveType)
+		/// <param name="_Value">The value you want to evaluate.</param>
+		public float EvaluateRatio(Brainwave _BrainwaveType, float _Value)
 		{
 			int total = 0;
 			int min = -1;
@@ -134,13 +135,14 @@ public class MindwaveCalibrator : MonoBehaviour
 				}
 
 				// Apply a coefficient to the value, depending on the quality of the signal to the Mindwave.
-				total += value * (data.poorSignalLevel / MindwaveHelper.NO_SIGNAL_LEVEL);
-				min = (min == -1) ? min : Mathf.Min(min, value);
-				max = (max == -1) ? max : Mathf.Max(max, value);
+				int signalQuality = (MindwaveHelper.NO_SIGNAL_LEVEL - data.poorSignalLevel);
+				total += value * (signalQuality / MindwaveHelper.NO_SIGNAL_LEVEL);
+				min = (min == -1) ? value : Mathf.Min(min, value);
+				max = (max == -1) ? value : Mathf.Max(max, value);
 			}
 
-			float average = (total / m_MindwaveData.Count);
-			return Mathf.Clamp01((average - min) / (max - min));
+			int diff = (max - min);
+			return (diff == 0) ? 0 : Mathf.Clamp01((_Value - min) / diff);
 		}
 
 	#endregion
@@ -159,46 +161,6 @@ public class MindwaveCalibrator : MonoBehaviour
 		public int DataCount
 		{
 			get { return m_MindwaveData.Count; }
-		}
-
-		public float DeltaRatio
-		{
-			get { return CalculateRatio(Brainwave.Delta); }
-		}
-
-		public float ThetaRatio
-		{
-			get { return CalculateRatio(Brainwave.Theta); }
-		}
-
-		public float LowAlphaRatio
-		{
-			get { return CalculateRatio(Brainwave.LowAlpha); }
-		}
-
-		public float HighAlphaRatio
-		{
-			get { return CalculateRatio(Brainwave.HighAlpha); }
-		}
-
-		public float LowBetaRatio
-		{
-			get { return CalculateRatio(Brainwave.LowBeta); }
-		}
-
-		public float HighBetaRatio
-		{
-			get { return CalculateRatio(Brainwave.HighBeta); }
-		}
-
-		public float LowGammaRatio
-		{
-			get { return CalculateRatio(Brainwave.LowGamma); }
-		}
-
-		public float HighGammaRatio
-		{
-			get { return CalculateRatio(Brainwave.HighGamma); }
 		}
 
 	#endregion

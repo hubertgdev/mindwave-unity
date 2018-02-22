@@ -238,6 +238,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114871861016258844, guid: 8b4e4ddc023712f44a95397307ccaf60,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114159413638650230, guid: 8b4e4ddc023712f44a95397307ccaf60,
         type: 2}
       propertyPath: m_ShowDataPackets

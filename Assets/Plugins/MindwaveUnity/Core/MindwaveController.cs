@@ -121,11 +121,6 @@ public class MindwaveController : MonoBehaviour
 		private void Update()
 		{
 			UpdateTimeoutTimer(Time.deltaTime);
-
-			if(Input.GetKeyDown(KeyCode.Space))
-			{
-				UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-			}
 		}
 
 	#endregion

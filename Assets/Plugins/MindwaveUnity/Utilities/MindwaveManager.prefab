@@ -58,7 +58,7 @@ MonoBehaviour:
   m_TcpPort: 13854
   m_TryConnectAtStart: 0
   m_ConnectionTimeout: 10
-  m_UpdateStreamRate: 0.02
+  m_UpdateStreamRate: 0.05
   m_ShowDataPackets: 0
   m_ShowStreamErrors: 0
 --- !u!114 &114548404811646288
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Controller: {fileID: 114159413638650230}
-  m_MaxDataLength: 500
+  m_MaxDataLength: 50
 --- !u!114 &114776316930693180
 MonoBehaviour:
   m_ObjectHideFlags: 1
