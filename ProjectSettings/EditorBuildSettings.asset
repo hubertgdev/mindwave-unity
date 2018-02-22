@@ -6,8 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TestScene_03.unity
+    path: Assets/Plugins/MindwaveUnity/DemoScene.unity
     guid: 74eaa4206b634c341a2f0f82cc5f4d64
-  - enabled: 1
-    path: Assets/TestScene_Empty.unity
-    guid: 65e1889334acfcf45b9649baec6f9d59
