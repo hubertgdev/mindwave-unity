@@ -312,7 +312,10 @@ public class MindwaveController : MonoBehaviour
 				m_TimeoutTimer += _DeltaTime;
 				if(m_TimeoutTimer >= m_ConnectionTimeout)
 				{
-					OnConnectionTimeout();
+					if(OnConnectionTimeout != null)
+					{
+						OnConnectionTimeout();
+					}
 					Disconnect();
 				}
 			}
