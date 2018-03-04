@@ -1,6 +1,6 @@
 ﻿///<summary>
 ///
-///		Contains many helper methods for working with the Neurosky Mindwave.
+///		Contains helper methods for working with the Neurosky Mindwave values.
 ///
 ///</summary>
 public static class MindwaveHelper
@@ -9,9 +9,14 @@ public static class MindwaveHelper
 	#region Attributes
 
 		// Constants & Statics
-
+		
+		// Maximum "eSense" value (meditaiton or attention)
 		public const int SENSE_MAX = 100;
+
+		// Maximum blink strength value
 		public const int BLINK_MAX = 200;
+
+		// The maximum value of "poorSignalLevel", meaning that the headset has no signal
 		public const int NO_SIGNAL_LEVEL = 200;
 
 	#endregion
@@ -19,11 +24,17 @@ public static class MindwaveHelper
 
 	#region Public Methods
 
+		/// <summary>
+		/// Calculates a ratio of a given sense value (meditation or attention).
+		/// </summary>
 		public static int GetSenseRatio(int _SenseValue)
 		{
 			return (_SenseValue / SENSE_MAX);
 		}
-
+		
+		/// <summary>
+		/// Calculates the ratio of the given blink strength value.
+		/// </summary>
 		public static int GetBlinkRatio(int _BlinkValue)
 		{
 			return (_BlinkValue / BLINK_MAX);
