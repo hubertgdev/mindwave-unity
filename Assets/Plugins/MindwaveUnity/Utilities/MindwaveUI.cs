@@ -10,7 +10,7 @@
 ///		
 ///
 ///</summary>
-[AddComponentMenu("Scripts/NeuroSky/Mindwave UI")]
+[AddComponentMenu("Scripts/MindwaveUnity/Mindwave UI")]
 public class MindwaveUI : MonoBehaviour
 {
 

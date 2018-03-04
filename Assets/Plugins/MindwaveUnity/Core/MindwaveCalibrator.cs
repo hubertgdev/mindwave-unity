@@ -14,7 +14,7 @@
 ///		Note that the calculation is quite heavy, and you should take care to call CalculateRatio() only once per frame.
 ///
 ///</summary>
-[AddComponentMenu("Scripts/NeuroSky/Mindwave Calibrator")]
+[AddComponentMenu("Scripts/MindwaveUnity/Mindwave Calibrator")]
 public class MindwaveCalibrator : MonoBehaviour
 {
 

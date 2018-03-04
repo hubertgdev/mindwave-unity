@@ -22,7 +22,7 @@
 ///		This means the data are accessible like a web server. So we can use a TcpClient in C# to get data.
 ///
 ///</summary>
-[AddComponentMenu("Scripts/NeuroSky/Mindwave Controller")]
+[AddComponentMenu("Scripts/MindwaveUnity/Mindwave Controller")]
 public class MindwaveController : MonoBehaviour
 {
 

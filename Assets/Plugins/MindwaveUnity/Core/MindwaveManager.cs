@@ -16,7 +16,7 @@
 ///	can help you to work with brainwaves values by calculating ratios.
 ///
 ///</summary>
-[AddComponentMenu("Scripts/NeuroSky/Mindwave Manager")]
+[AddComponentMenu("Scripts/MindwaveUnity/Mindwave Manager")]
 [RequireComponent(typeof(MindwaveController))]
 [RequireComponent(typeof(MindwaveCalibrator))]
 public class MindwaveManager : MuffinTools.MonoSingleton<MindwaveManager>
