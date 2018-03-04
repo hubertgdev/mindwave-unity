@@ -18,24 +18,75 @@
 public class MindwaveCalibrator : MonoBehaviour
 {
 
+	#region Enums & Subclasses
+
+		/// <summary>
+		/// The different calibration data getting modes.
+		/// </summary>
+		public enum MindwaveCalibratorMode
+		{
+			Automatic,
+			Manual
+		}
+
+	#endregion
+
+
 	#region Attributes
 
 		// References
 
 		[Header("References")]
 
-		[SerializeField, Tooltip("If the MindwaveController reference is not set, MindwaveCalibrator will try to get the one on this GameObject")]
+		[SerializeField]
+		[Tooltip("If the MindwaveController reference is not set, MindwaveCalibrator will try to get the one on this GameObject")]
 		private MindwaveController m_Controller = null;
 
 		// Settings
 
-		[Header("Settings")]
+		[SerializeField, HideInInspector]
+		[Tooltip("If \"Automatic\", the brainwave values will be collected along time. Else, if \"Manual\", you have to define the min and max values for each brainwave")]
+		private MindwaveCalibratorMode m_DataMode = MindwaveCalibratorMode.Automatic;
 
-		[SerializeField, Range(1, 1000), Tooltip("Defines the number of brainwaves data collected for calculating average")]
+		[SerializeField, HideInInspector]
+		[Tooltip("Defines the number of brainwaves data collected for calculating average")]
 		private int m_MaxDataLength = 100;
+
+		[SerializeField, HideInInspector]
+		[Tooltip("Defines the min and max interval for Delta brainwaves")]
+		private Vector2 m_DeltaWaves = new Vector2(0, 2000000);
+
+		[SerializeField, HideInInspector]
+		[Tooltip("Defines the min and max interval for Theta brainwaves")]
+		private Vector2 m_ThetaWaves = new Vector2(0, 2000000);
+
+		[SerializeField, HideInInspector]
+		[Tooltip("Defines the min and max interval for Low Alpha brainwaves")]
+		private Vector2 m_LowAlphaWaves = new Vector2(0, 2000000);
+
+		[SerializeField, HideInInspector]
+		[Tooltip("Defines the min and max interval for High Alpha brainwaves")]
+		private Vector2 m_HighAlphaWaves = new Vector2(0, 2000000);
+
+		[SerializeField, HideInInspector]
+		[Tooltip("Defines the min and max interval for Low Beta brainwaves")]
+		private Vector2 m_LowBetaWaves = new Vector2(0, 2000000);
+
+		[SerializeField, HideInInspector]
+		[Tooltip("Defines the min and max interval for High Beta brainwaves")]
+		private Vector2 m_HighBetaWaves = new Vector2(0, 2000000);
+
+		[SerializeField, HideInInspector]
+		[Tooltip("Defines the min and max interval for Low Gamma brainwaves")]
+		private Vector2 m_LowGammaWaves = new Vector2(0, 2000000);
+
+		[SerializeField, HideInInspector]
+		[Tooltip("Defines the min and max interval for High Gamma brainwaves")]
+		private Vector2 m_HighGammaWaves = new Vector2(0, 2000000);
 
 		// Flow
 
+		// The list of collected data along time. Used to calculate the ratio for a given value, using EvaluateRatio().
 		private Queue<MindwaveDataModel> m_MindwaveData = new Queue<MindwaveDataModel>();
 
 	#endregion
@@ -88,50 +139,115 @@ public class MindwaveCalibrator : MonoBehaviour
 		/// <param name="_Value">The value you want to evaluate.</param>
 		public float EvaluateRatio(Brainwave _BrainwaveType, float _Value)
 		{
+			float ratio = 0.0f;
+
+			switch(m_DataMode)
+			{
+				case MindwaveCalibratorMode.Automatic:
+					ratio = EvaluateRatioAutomatic(_BrainwaveType, _Value);
+					break;
+
+				case MindwaveCalibratorMode.Manual:
+					ratio = EvaluateRatioManual(_BrainwaveType, _Value);
+					break;
+
+				default:
+					break;
+			}
+
+			return ratio;
+		}
+
+		private float EvaluateRatioManual(Brainwave _BrainwaveType, float _Value)
+		{
+			Vector2 minMax = Vector2.zero;
+
+			switch(_BrainwaveType)
+			{
+				case Brainwave.Delta:
+					minMax = m_DeltaWaves;
+					break;
+
+				case Brainwave.Theta:
+					minMax = m_ThetaWaves;
+					break;
+
+				case Brainwave.LowAlpha:
+					minMax = m_LowAlphaWaves;
+					break;
+
+				case Brainwave.HighAlpha:
+					minMax = m_HighAlphaWaves;
+					break;
+
+				case Brainwave.LowBeta:
+					minMax = m_LowBetaWaves;
+					break;
+
+				case Brainwave.HighBeta:
+					minMax = m_HighBetaWaves;
+					break;
+
+				case Brainwave.LowGamma:
+					minMax = m_LowGammaWaves;
+					break;
+
+				case Brainwave.HighGamma:
+					minMax = m_HighGammaWaves;
+					break;
+			}
+
+			// On minMax vectors: x = min, y = max
+			int diff = (int)(minMax.y - minMax.x);
+			return (diff == 0) ? 0 : Mathf.Clamp01((_Value - minMax.x) / diff);
+		}
+
+		private float EvaluateRatioAutomatic(Brainwave _BrainwaveType, float _Value)
+		{
 			int total = 0;
 			int min = -1;
 			int max = -1;
 
-			foreach(MindwaveDataModel data in m_MindwaveData)
+			foreach (MindwaveDataModel data in m_MindwaveData)
 			{
 				int value = 0;
 
-				switch(_BrainwaveType)
+				switch (_BrainwaveType)
 				{
 					case Brainwave.Delta:
-						value = data.eegPower.delta;
-						break;
+					value = data.eegPower.delta;
+					break;
 
 					case Brainwave.Theta:
-						value = data.eegPower.theta;
-						break;
+					value = data.eegPower.theta;
+					break;
 
 					case Brainwave.LowAlpha:
-						value = data.eegPower.lowAlpha;
-						break;
+					value = data.eegPower.lowAlpha;
+					break;
 
 					case Brainwave.HighAlpha:
-						value = data.eegPower.highAlpha;
-						break;
+					value = data.eegPower.highAlpha;
+					break;
 
 					case Brainwave.LowBeta:
-						value = data.eegPower.lowBeta;
-						break;
+					value = data.eegPower.lowBeta;
+					break;
 
 					case Brainwave.HighBeta:
-						value = data.eegPower.highBeta;
-						break;
+					value = data.eegPower.highBeta;
+					break;
 
 					case Brainwave.LowGamma:
-						value = data.eegPower.lowGamma;
-						break;
+					value = data.eegPower.lowGamma;
+					break;
 
 					case Brainwave.HighGamma:
-						value = data.eegPower.highGamma;
-						break;
+					value = data.eegPower.highGamma;
+					break;
 
 					default:
-						break;
+					break;
 				}
 
 				// Apply a coefficient to the value, depending on the quality of the signal to the Mindwave.
@@ -163,13 +279,11 @@ public class MindwaveCalibrator : MonoBehaviour
 			get { return m_MindwaveData.Count; }
 		}
 
-	#endregion
-
-	
-	#region Debug & Tests
-
-		#if UNITY_EDITOR
-		#endif
+		public MindwaveCalibratorMode Mode
+		{
+			get { return m_DataMode; }
+			set { m_DataMode = value; }
+		}
 
 	#endregion
 

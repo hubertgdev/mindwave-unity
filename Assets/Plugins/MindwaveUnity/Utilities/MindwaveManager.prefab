@@ -59,7 +59,7 @@ MonoBehaviour:
   m_TryConnectAtStart: 0
   m_ConnectionTimeout: 10
   m_UpdateStreamRate: 0.05
-  m_ShowDataPackets: 0
+  m_ShowDataPackets: 1
   m_ShowStreamErrors: 0
 --- !u!114 &114548404811646288
 MonoBehaviour:
@@ -73,7 +73,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Controller: {fileID: 114159413638650230}
+  m_DataMode: 1
   m_MaxDataLength: 50
+  m_DeltaWaves: {x: 248031, y: 1800000}
+  m_ThetaWaves: {x: 40000, y: 500000}
+  m_LowAlphaWaves: {x: 5000, y: 80000}
+  m_HighAlphaWaves: {x: 3000, y: 50000}
+  m_LowBetaWaves: {x: 2000, y: 40000}
+  m_HighBetaWaves: {x: 2000, y: 40000}
+  m_LowGammaWaves: {x: 1000, y: 30000}
+  m_HighGammaWaves: {x: 500, y: 25000}
 --- !u!114 &114776316930693180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,7 +100,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821726785875298}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e6fadedef188664d85adef58fdd2cf3, type: 3}
   m_Name: 
