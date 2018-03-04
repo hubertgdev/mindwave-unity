@@ -231,11 +231,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114117566272854848, guid: 6a6f8ed1967dbd44199c277f12147ad6,
-        type: 2}
-      propertyPath: m_MinMeditation
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a6f8ed1967dbd44199c277f12147ad6, type: 2}
   m_IsPrefabParent: 0
@@ -277,6 +272,11 @@ Prefab:
     - target: {fileID: 4519412629677970, guid: 8b4e4ddc023712f44a95397307ccaf60, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114159413638650230, guid: 8b4e4ddc023712f44a95397307ccaf60,
+        type: 2}
+      propertyPath: m_ShowDataPackets
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b4e4ddc023712f44a95397307ccaf60, type: 2}

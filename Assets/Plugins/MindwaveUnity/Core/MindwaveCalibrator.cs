@@ -158,6 +158,9 @@ public class MindwaveCalibrator : MonoBehaviour
 			return ratio;
 		}
 
+		/// <summary>
+		/// Evaluates the ratio based on defined min/max values for the given brainwave.
+		/// </summary>
 		private float EvaluateRatioManual(Brainwave _BrainwaveType, float _Value)
 		{
 			Vector2 minMax = Vector2.zero;
@@ -202,6 +205,9 @@ public class MindwaveCalibrator : MonoBehaviour
 			return (diff == 0) ? 0 : Mathf.Clamp01((_Value - minMax.x) / diff);
 		}
 
+		/// <summary>
+		/// Evaluates the ratio based on the collected data.
+		/// </summary>
 		private float EvaluateRatioAutomatic(Brainwave _BrainwaveType, float _Value)
 		{
 			int total = 0;

@@ -1,0 +1,3 @@
+# Mindwave Unity - Calibrator
+
+This component is a helper for working with the very dynamic brainwave values (delta, theta, ...). It stores the incoming data from the `MindwaveController` (detailed above), and allow you to calculate averages and ratios. So, instead of having abstract value from 3000 to 1800000 (for example... delta brainwaves fluctuations made me crazy), you have a value from 0 to 1 that closely correspond to a current user... And that's really important: we all don't have the same brain!

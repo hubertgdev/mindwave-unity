@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0415e26130b324d8de89585625e031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinMeditation: 30
+  m_MinMeditation: 20
   m_MeditationToInitBlast: 70
   m_MeditationPhaseDuration: 6
   m_RequiredAttention: 70
