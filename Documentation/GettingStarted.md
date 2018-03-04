@@ -6,9 +6,9 @@ First of all, you must follow the [installation guide](../README.md), in the [RE
 
 Open the demo scene. Put the Mindwave device on the head of somebody, or yourself. Ensure you have [ThinkGear Connector](http://developer.neurosky.com/docs/doku.php?id=thinkgear_connector_tgc) application running, and the headset turned on... If it does not turn on, you may have missed to put a battery in. No, I'm no judging.
 
-*NOTE: if you don't see your device in bluetooth managers, you should change the battery and pick a new one... Yeah, I know, that's weird, but it worked everytime for me.*
+***NOTE**: if you don't see your device in bluetooth managers, you should change the battery and pick a new one... Yeah, I know, that's weird, but it worked everytime for me.*
 
-The demo scene only contains the `MindwaveManager` prefab (at `Plugins/MindwaveUnity/Utilities/MindwaveManager.prefab`). This prefab manages both [`MindwaveController`](./MindwaveController.md) and [`MindwaveCalibrator`](./MindwaveCalibrator.md) components. The prefab also have the [`MindwaveUI`](./MindwaveUI.md) component on it, which is helpful for debugging.
+The demo scene only contains the "MindwaveManager" prefab (at `Plugins/MindwaveUnity/Utilities/MindwaveManager.prefab`). This prefab manages both [`MindwaveController`](./MindwaveController.md) and [`MindwaveCalibrator`](./MindwaveCalibrator.md) components. The prefab also have the [`MindwaveUI`](./MindwaveUI.md) component on it, which is helpful for debugging.
 
 Let's play the demo scene. You should see the following screen :
 
