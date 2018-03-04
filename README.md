@@ -34,6 +34,7 @@ Navigate through the `Documentation/` directory to know more about this library 
 
 * [Getting Started guide](./Documentation/GettingStarted.md)
 * [Bomb Game](./Documentation/BombGame.md)
+* [Known issues](./Documentation/KnownIssues.md)
 
 ### Components & Utilities
 
