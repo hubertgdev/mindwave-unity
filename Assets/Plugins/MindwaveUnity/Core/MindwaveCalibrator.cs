@@ -158,6 +158,11 @@ public class MindwaveCalibrator : MonoBehaviour
 			return ratio;
 		}
 
+	#endregion
+
+	
+	#region Private Methods
+
 		/// <summary>
 		/// Evaluates the ratio based on defined min/max values for the given brainwave.
 		/// </summary>
@@ -267,14 +272,6 @@ public class MindwaveCalibrator : MonoBehaviour
 			return (diff == 0) ? 0 : Mathf.Clamp01((_Value - min) / diff);
 		}
 
-	#endregion
-
-	
-	#region Protected Methods
-	#endregion
-
-	
-	#region Private Methods
 	#endregion
 
 	

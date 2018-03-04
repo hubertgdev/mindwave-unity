@@ -4,7 +4,7 @@ First of all, you must follow the [installation guide](../README.md), in the [RE
 
 ## Getting started
 
-Open the demo scene. Put the Mindwave device on the head of somebody, or yourself. Ensure you have ThinkGear Connector application running, and the headset turned on... If it does not turn on, you may have missed to put a battery in. No, I'm no judging.
+Open the demo scene. Put the Mindwave device on the head of somebody, or yourself. Ensure you have [ThinkGear Connector](http://developer.neurosky.com/docs/doku.php?id=thinkgear_connector_tgc) application running, and the headset turned on... If it does not turn on, you may have missed to put a battery in. No, I'm no judging.
 
 *NOTE: if you don't see your device in bluetooth managers, you should change the battery and pick a new one... Yeah, I know, that's weird, but it worked everytime for me.*
 
@@ -22,10 +22,6 @@ Now, you should see something like this :
 
 ... Congratulations, this brain is working!
 
-If the connection can't be established:
+## Troubleshooting
 
-* 1) Turn off, and then turn on the headset, wait some seconds and retry
-* 2) Check if the headset appears in the Bluetooth devices. If not, change the battery and retry
-* 3) Quit ThinkGear Connector (totally, a process could still be running), then reopen it, and retry
-* 4) Still not working ? Mh, things become complicated. May you should restart your computer (in doubt...)
-* 5) ... I'm sorry for you :/
+If the connection can't be established, check the [known issues](./KnownIssues.md).
