@@ -111,7 +111,7 @@ public class MindwaveUI : MonoBehaviour
 					GUILayout.BeginVertical(GUI.skin.box);
 					{
 						GUILayout.Label("Trying to connect to Mindwave...");
-						GUILayout.Label("Timeouts in " + Mathf.CeilToInt(m_Controller.ConnectionTimeout - m_Controller.TimoutTimer) + "s");
+						GUILayout.Label("Timeouts in " + Mathf.CeilToInt(m_Controller.ConnectionTimeoutDelay - m_Controller.TimeoutTimer) + "s");
 					}
 					GUILayout.EndVertical();
 				}

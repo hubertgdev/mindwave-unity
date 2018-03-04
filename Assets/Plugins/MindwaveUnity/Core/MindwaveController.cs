@@ -53,7 +53,7 @@ public class MindwaveController : MonoBehaviour
 		public event VoidDelegate OnConnectionTimeout;
 		// Triggered when data are get from Mindwave.
 		public event MindwaveDataDelegate OnUpdateMindwaveData;
-		// Triggered when raw EEG data are get from Mindwave.
+		// Triggered when raw EEG (Electroencephalogram) data are get from Mindwave.
 		public event IntValueDelegate OnUpdateRawEEG;
 		// Triggered when blink data are get from Mindwave.
 		public event IntValueDelegate OnUpdateBlink;
@@ -385,12 +385,12 @@ public class MindwaveController : MonoBehaviour
 			get { return m_ConnectedFlag; }
 		}
 
-		public float TimoutTimer
+		public float TimeoutTimer
 		{
 			get { return m_TimeoutTimer; }
 		}
 
-		public float ConnectionTimeout
+		public float ConnectionTimeoutDelay
 		{
 			get { return m_ConnectionTimeout; }
 		}

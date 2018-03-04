@@ -1,6 +1,6 @@
 # Mindwave Unity
 
-This is a Unity plugin for developping app and games with the *NeuroSky MindwaveMobile*, on the occasion of the [Serious Game Jam](www.eventbrite.fr/e/34697918408).
+This is a Unity plugin for developping app and games with the *NeuroSky MindwaveMobile*, on the occasion of the [Serious Game Jam](https://www.eventbrite.fr/e/34697918408).
 
 **Note**: This project is made with Unity 2017.2.0f3. The package works well on Unity 2017.x versions, but had not been tested on older versions.
 
@@ -29,12 +29,13 @@ Navigate through the `Documentation/` directory to know more about this library 
 * [Getting Started guide](./Documentation/GettingStarted.md)
 * [Bomb Game](./Documentation/BombGame.md)
 
-### Components
+### Components & Utilities
 
-* [MindwaveManager](./MindwaveManager.md)
-* [MindwaveController](./MindwaveController.md)
-* [MindwaveCalibrator](./MindwaveCalibrator.md)
-* [MindwaveUI](./MindwaveUI.md)
+* [MindwaveManager](./Documentation/MindwaveManager.md)
+* [MindwaveController](./Documentation/MindwaveController.md)
+* [MindwaveCalibrator](./Documentation/MindwaveCalibrator.md)
+* [MindwaveHelper](./Documentation/MindwaveHelper.md)
+* [MindwaveUI](./Documentation/MindwaveUI.md)
 
 ## Dependencies
 
