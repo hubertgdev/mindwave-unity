@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Controller: {fileID: 114159413638650230}
   m_DataMode: 1
   m_MaxDataLength: 50
-  m_DeltaWaves: {x: 248031, y: 1800000}
+  m_DeltaWaves: {x: 200000, y: 1800000}
   m_ThetaWaves: {x: 40000, y: 500000}
   m_LowAlphaWaves: {x: 5000, y: 80000}
   m_HighAlphaWaves: {x: 3000, y: 50000}

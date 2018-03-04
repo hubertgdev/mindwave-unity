@@ -18,7 +18,7 @@ Then, you need to **install [ThinkGear Connector](http://developer.neurosky.com/
 
 * In your Unity Project, go to **Edit > Project Settings > Player**.
 * Unfold the **Other Settings" section.
-* Under **Configuration**, change the value of **Api Compatibility Level** to ".NET 2.0 Subset".
+* Under **Configuration**, change the value of **Api Compatibility Level** to "**.NET 2.0**" (and not "**.NET 2..0 Subset**").
 
 ### 4. Start using plugin components
 
