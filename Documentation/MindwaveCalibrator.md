@@ -32,7 +32,7 @@ When you call `EvaluateRatio()`, the min and max values you defined for a specif
 
 #### Using the [`MindwaveManager`](./MindwaveManager.md)
 
-You can just drag and drop the "MindwaveManager" prefab (at `Plugins/MindwaveUnity/Utilities/MindwaveManager.prefab`). The `MindwaveCalibrator` is already correctly set.
+You can just drag and drop the "MindwaveManager" prefab (at `Plugins/MindwaveUnity/Utilities/MindwaveManager.prefab`). `MindwaveCalibrator` is already correctly set.
 
 You can also put the [`MindwaveManager`](./MindwaveManager.md) component on a GameObject. An instance of `MindwaveCalibrator` will automatically be added to that GameObject. Follow the steps in *Usage without [`MindwaveManager`](./MindwaveManager.md)* to set it correctly.
 

@@ -18,7 +18,7 @@ Click on "Connect to Mindwave" button. It initializes the connection to the Mind
 
 Now, you should see something like this :
 
-![Mindwave connected GUI](./DocumentationAssets/GettingStarted_02.png)
+![Mindwave connected GUI](./DocumentationAssets/MindwaveUI_02.png)
 
 ... Congratulations, this brain is working!
 

@@ -12,7 +12,7 @@ The `MindwaveController` makes the binding from Mindwave device and your app. It
 
 #### Using the [`MindwaveManager`](./MindwaveManager.md)
 
-You can just drag and drop the "MindwaveManager" prefab (at `Plugins/MindwaveUnity/Utilities/MindwaveManager.prefab`). The `MindwaveController` is already correctly set.
+You can just drag and drop the "MindwaveManager" prefab (at `Plugins/MindwaveUnity/Utilities/MindwaveManager.prefab`). `MindwaveController` is already correctly set.
 
 You can also put the [`MindwaveManager`](./MindwaveManager.md) component on a GameObject. An instance of `MindwaveController` will automatically be added to that GameObject.
 

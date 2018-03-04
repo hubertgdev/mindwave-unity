@@ -14,7 +14,13 @@ First, **pair the Mindwave headset** with you computer through **Bluetooth**. On
 
 Then, you need to **install [ThinkGear Connector](http://developer.neurosky.com/docs/doku.php?id=thinkgear_connector_tgc)**. It's a tool developped by NeuroSky that emit data from any of their device to a network socket. So it allows you to get data from the device, just like you get data from a website, using sockets.
 
-### 3. Start using plugin components
+### 3. Change the *API Compatibility Level*
+
+* In your Unity Project, go to **Edit > Project Settings > Player**.
+* Unfold the **Other Settings" section.
+* Under **Configuration**, change the value of **Api Compatibility Level** to ".NET 2.0 Subset".
+
+### 4. Start using plugin components
 
 Back to the Unity plugin. You can find a folder `Package` at the project root. **Import that package** into your Unity project.
 
