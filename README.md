@@ -26,7 +26,7 @@ Then, you need to **install [ThinkGear Connector](http://developer.neurosky.com/
 
 ### 4. Start using plugin components
 
-Back to the Unity plugin. You can find a folder `/UnityPackage` at the project root. **Import that package** into your Unity project.
+Back to the Unity plugin. You can find a folder `/UnityPackages` at the project root. **Import that package** into your Unity project.
 
 This package contains the classes and components of the plugin, a demo scene and a **"ready-to-use" prefab**.
 
