@@ -17,12 +17,12 @@ public struct MindwaveDataESenseModel
 
 	#region Accessors
 
-		public int AttentionRatio
+		public float AttentionRatio
 		{
 			get { return MindwaveHelper.GetSenseRatio(attention); }
 		}
 
-		public int MeditationRatio
+		public float MeditationRatio
 		{
 			get { return MindwaveHelper.GetSenseRatio(meditation); }
 		}

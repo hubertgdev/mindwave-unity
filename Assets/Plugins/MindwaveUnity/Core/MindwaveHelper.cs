@@ -27,7 +27,7 @@ public static class MindwaveHelper
 		/// <summary>
 		/// Calculates a ratio of a given sense value (meditation or attention).
 		/// </summary>
-		public static int GetSenseRatio(int _SenseValue)
+		public static float GetSenseRatio(int _SenseValue)
 		{
 			return (_SenseValue / SENSE_MAX);
 		}
@@ -35,7 +35,7 @@ public static class MindwaveHelper
 		/// <summary>
 		/// Calculates the ratio of the given blink strength value.
 		/// </summary>
-		public static int GetBlinkRatio(int _BlinkValue)
+		public static float GetBlinkRatio(int _BlinkValue)
 		{
 			return (_BlinkValue / BLINK_MAX);
 		}
