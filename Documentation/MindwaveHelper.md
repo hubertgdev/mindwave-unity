@@ -31,7 +31,7 @@ Corresponds to the maximum value of "poorSignalLevel" that [ThinkGear Connector]
 ### Methods
 
 ```csharp
-public static int GetSenseRatio(int _SenseValue)
+public static float GetSenseRatio(float _SenseValue)
 ```
 
 Calculates a ratio of a given sense value (meditation or attention).
@@ -39,7 +39,7 @@ Calculates a ratio of a given sense value (meditation or attention).
 ---
 
 ```csharp
-public static int GetBlinkRatio(int _BlinkValue)
+public static float GetBlinkRatio(float _BlinkValue)
 ```
 
 Calculates the ratio of the given blink strength value, on the maximum.
